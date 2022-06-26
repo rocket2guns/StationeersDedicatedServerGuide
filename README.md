@@ -15,7 +15,7 @@ In all cases we want the working directory to be where the install is. For my ex
 ## Commands
 
 All commands prefixed with a `-` are a launch command, most of which can also be used during runtime as well.
-Runtime commands are the same name but with the `-`.
+Runtime commands are the same name but without the `-`.
 
 **Example:** `-load "My Saved Game"` becomes `load "My Saved Game"`
 
@@ -88,7 +88,7 @@ Properties of note are:
 - **ServerVisible**: Starts pining our Master server which will allow the server to show on the server list on the client. Default `true`
 - **GamePort**: The port the server will be listening on. Default `27016`
 - **ServerName**: The name of the server to be displayed on the server list. Default `Stationeers`
-- **Password**: An optional password to lock the server. Default `null`
+- **ServerPassword**: An optional password to lock the server. Default `null`
 - **AutoSave**: turns on/off autosaving in game. Default `true`
 - **SaveInterval**: If AutoSave is on, the amount of seconds the game will save. Default `300`
 - **ServerMaxPlayers**: The maximin amount of players allowed on the server. Range 1 - 30. Default `10`
@@ -99,7 +99,7 @@ The settings arguments are separated by a space and are grouped in a key value p
 
 **Example:**
 ```bash
-$ ./rocketstation_DedicatedServer.x86_64 -settings ServerName "My Cool Game" StartLocalHost true ServerVisible true GamePort 27016 AutoSave true SaveInterval 300 Password abc123 ServerMaxPlayers 13 UPNPEnabled true
+$ ./rocketstation_DedicatedServer.x86_64 -settings ServerName "My Cool Game" StartLocalHost true ServerVisible true GamePort 27016 AutoSave true SaveInterval 300 ServerPassword abc123 ServerMaxPlayers 13 UPNPEnabled true
 ```
 
 ## Settings Path
