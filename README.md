@@ -59,15 +59,13 @@ This can be useful for starting up a new server without worrying about if the sa
 $ ./rocketstation_DedicatedServer.x86_64 -load "My saved game" moon
 ```
 
-## Latest game (Not support yet)
+## Load Latest Game
 
-Currently there isn't a way to load to load a game or its more current auto save. A `-loadlatest` command is underway and will come out in a future patch.
-
-This must be used before the `-load` command otherwise it wont work. 
-
-This command will scan the saves directory and use the latest modified `world.xml` save.
+`-loadlatest` command will scan the saves directory and use the latest modified `world.xml` save.
 If none is found it will be ignored.
 If one is found the `-load` command will be ignored.
+
+This must be used before the `-load` command otherwise it wont work. 
 
 **Example:**
 
@@ -123,8 +121,19 @@ Save can be made to override current save or create a new one. Just like on the 
 save "My saved game"
 ```
 
+# In Game Help
+`help` command during runtime will display all the help messages per command. It's a fairly large list so it might be more useful to only print the command help you need via `help <command>`, a list of commands can be printed using `help list` or `help l`.
+
+Example:
+```bash
+help version
+```
+
+
 # Known Issues
 
 - On Linux the console clearing is messing with buffer of the terminal and resulting in really strange behaviour. Input can still be made i.e manually saving via `save` command, however nothing will print to console with any useful feedback.
 
 - No server admins yet. I.e selected clients being able to do server commands without needing to ssh into their server or whatever.
+
+- Help message formatting is terribly hard to read.
