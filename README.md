@@ -62,17 +62,17 @@ $ ./rocketstation_DedicatedServer.x86_64 -load "My saved game" moon
 ## Load Latest Game
 
 `-loadlatest` command will scan the saves directory and use the latest modified `world.xml` save.
-If none is found it will be ignored.
-If one is found the `-load` command will be ignored.
 
-This must be used before the `-load` command otherwise it wont work. 
+`-loadlatest` works identical to `-load` in the way it handles fallbacks.
+
+`-loadlatest` is a replacement for `-load` command and must not be used at the same time otherwise it wont work.
+
+If no `world.xml` is found within the `saves` directory it will fallback to using the first argument, a named save. If that also fails it will use the second argument world name.
 
 **Example:**
 
-This will scan and use the latest modified `world.xml` if one is found. Otherwise it will fall back to `-load "My saved game"`, if that directory doesn't exist it will start a new game with world `moon` and save the game with given name.
-
 ```bash
-$ ./rocketstation_DedicatedServer.x86_64 -loadlatest -load "My saved game" moon
+$ ./rocketstation_DedicatedServer.x86_64 -loadlatest "My saved game" moon
 ```
 
 # Settings
@@ -137,3 +137,46 @@ help version
 - No server admins yet. I.e selected clients being able to do server commands without needing to ssh into their server or whatever.
 
 - Help message formatting is terribly hard to read.
+
+# Stationeers Commands
+| Command | Launch Command? | Arguments | Help |
+| :------ | :-------------: | :-------- | :--- |
+| `help` | False | commands, list (l), &lt;key&gt;, tofile: prints the help output to file | Displays helpful stuff
+| `clear` | False |  | Clears all console text
+| `quit` | False |  | immediately quits the game without any prompts
+| `exit` | False |  | Leaves a game session and goes back to 'StartMenu'
+| `leave` | False |  | Leaves a game session and goes back to 'StartMenu'
+| `newgame` | True | worldName | Starts a new game at specific world automatically from launch.Must provide world name as argument
+| `new` | True | worldName | Starts a new game at specific world automatically from launch.Must provide world name as argument
+| `loadgame` | True | list, &lt;filename&gt;, &lt;filename&gt; (optional)&lt;worldname&gt; | Loads a saved world file. This can also be used to start a new game via launch command. e.g -load "my game save" moon
+| `load` | True | list, &lt;filename&gt;, &lt;filename&gt; (optional)&lt;worldname&gt; | Loads a saved world file. This can also be used to start a new game via launch command. e.g -load "my game save" moon
+| `loadlatest` | True | list, &lt;filename&gt;, &lt;filename&gt; (optional)&lt;worldname&gt; | Loads the latest saved file, including auto saves
+| `joingame` | True | [address]:[port] | Joins a client to the server
+| `join` | True | [address]:[port] | Joins a client to the server
+| `steam` | False |  | Commands to test Facepunch API. Just checks if steam is initialised and if DLC is purchased
+| `listnetworkdevices` | False | id | Lists all devices on a network. Includes: PipeNetwork, CableNetwork, ChuteNetwork
+| `testbytearray` | False |  | Tests every item in world to check its network read/write functions are parallel. Only enabled in Editor. Supply a reference Id to check ONLY that item
+| `rocketbinary` | False | toggleloglength, togglelogbps | Starts logging the size of each section of a delta update.
+| `imgui` | False |  | Toggles ImguiInWorldTestCube on/off
+| `atmos` | False | pipe, world, room, global, thing | Enables atmosphere debugging
+| `thing` | False | No args returns total thing count, find, delete, spawn | Thing related commands
+| `keybindings` | False | reset (Resets the keybindings stack. Can help solve input issues) | Displays all the keybindings bound to LocalHuman
+| `reset` | False |  | Restarts the application
+| `version` | False |  | Returns the game version
+| `logtoclipboard` | False |  | Copies the content of the console buffer to the system clipboard buffer
+| `kick` | False | clientId - disconnects the client from the game | Kick clients from server commands
+| `ban` | False | clientId | Bans a client from the server (server only command)
+| `upnp` | False |  | returns universal plug and play (upnp) state
+| `network` | False |  | returns the current network status
+| `pause` | False | true, false | will pause/unpause the game (including for clients)
+| `say` | False |  | sends a message to all connected players
+| `save` | False | &lt;filename&gt;, delete (d | rm) &lt;filename&gt;, list (l) | Saves the current game to specified path
+| `log` | False | &lt;logname&gt; (optional), clear | Dumps all the logs to a file
+| `discord` | False |  | Interaction with the Discord SDK
+| `settings` | True | list, print, &lt;PropertyName&gt; &lt;Value&gt; | Change the settings.xml. e.g settings servermaxplayers 5
+| `netconfig` | True | list, print, &lt;PropertyName&gt; &lt;Value&gt; | Change the NetConfig.xml. e.g netconfig ip 127.0.0.1
+| `settingspath` | True | &lt;full-directory-path&gt; | Sets the default settings path to a new location. Launch command only. If none found default is used.
+| `debugthreads` | False | GameTick | Show the times that the worker threads take to run
+| `status` | False |  | Displays a bunch of info to give insight into state of server.
+| `test` | False |  | Testing all the colours of the rainbow
+
