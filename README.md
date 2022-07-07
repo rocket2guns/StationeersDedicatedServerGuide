@@ -61,13 +61,13 @@ $ ./rocketstation_DedicatedServer.x86_64 -load "My saved game" moon
 
 ## Load Latest Game
 
-`-loadlatest` command will scan the saves directory and use the latest modified `world.xml` save.
+`-loadlatest` command will scan the directory (save name based on first arg) and use the latest modified `world.xml` save from the root saved directory and the child Backup directory.
 
 `-loadlatest` works identical to `-load` in the way it handles fallbacks.
 
 `-loadlatest` is a replacement for `-load` command and must not be used at the same time otherwise it wont work.
 
-If no `world.xml` is found within the `saves` directory it will fallback to using the first argument, a named save. If that also fails it will use the second argument world name.
+If no `world.xml` is found within directory it will fallback to using the first argument, a named save. If that also fails it will use the second argument world name.
 
 **Example:**
 
