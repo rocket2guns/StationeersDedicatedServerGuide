@@ -138,7 +138,7 @@ help version
 
 - Help message formatting is terribly hard to read.
 
-# Stationeers Commands
+# Stationeers Commands - 0.2.3401.16711
 | Command | Launch Command? | Arguments | Help |
 | :------ | :-------------: | :-------- | :--- |
 | `help` | False | commands, list (l), &lt;key&gt;, tofile: prints the help output to file | Displays helpful stuff
@@ -178,5 +178,6 @@ help version
 | `settingspath` | True | &lt;full-directory-path&gt; | Sets the default settings path to a new location. Launch command only. If none found default is used.
 | `debugthreads` | False | GameTick | Show the times that the worker threads take to run
 | `status` | False |  | Displays a bunch of info to give insight into state of server.
+| `masterserver` | False | refresh | Commands to help with interacting with the Master Server
 | `test` | False |  | Testing all the colours of the rainbow
 
