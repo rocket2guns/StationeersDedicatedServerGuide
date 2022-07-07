@@ -12,6 +12,19 @@ In all cases we want the working directory to be where the install is. For my ex
 ~/.steam/debian-installation/steamapps/common/Stationeers Dedicated Server
 ```
 
+## Unity Commands
+
+You can also use Unity's commands line arguments list [here](https://docs.unity3d.com/Manual/CommandLineArguments.html)
+
+### Log File
+
+Most notable is `-logFile`
+
+Specify where Unity writes the Editor or Windows/Linux/OSX standalone log file. To output to the console, specify - for the path name. On Windows, use `-logfile - <pathname>` to direct the output to `stdout`, which by default is not the console.
+
+Using this also means you can not input into the console. So saving can only be done via autosave. This will be improved in future when we add something like RCON.
+
+
 ## Commands
 
 All commands prefixed with a `-` are a launch command, most of which can also be used during runtime as well.
@@ -137,6 +150,20 @@ help version
 - No server admins yet. I.e selected clients being able to do server commands without needing to ssh into their server or whatever.
 
 - Help message formatting is terribly hard to read.
+
+# Example Script
+
+You can configure this script to run at system boot
+
+```bash
+#!/bin/bash
+cd ~/.steam/debian-installation/steamapps/common/Stationeers Dedicated Server
+./rocketstation_DedicatedServer.x86_64 \
+    -logFile log.txt \
+    -loadlatest "Dedicated Server Game" mars \
+    -settings ServerName "Stationeers World" StartLocalHost true ServerVisible true ServerMaxPlayers 13 SaveInterval 333 ServerPassword "abc123"
+```
+
 
 # Stationeers Commands - 0.2.3401.16711
 | Command | Launch Command? | Arguments | Help |
