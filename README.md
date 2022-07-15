@@ -53,6 +53,10 @@ Runtime commands are the same name but without the `-`.
 $ ./rocketstation_DedicatedServer.x86_64 -new moon
 ```
 
+Using this wont be saving the game automatically though as a save directory is not created yet. You need to make a `save` command and then autosave will continue to work.
+
+Because of this its generally not advised to use this command out side of testing your server.
+
 # Loading a saved game
 
 `-load` command will check the `saves` directory which is in the root directory with the executable.
@@ -142,6 +146,14 @@ Example:
 help version
 ```
 
+# Kicking and Banning Players
+
+`kick <clientId>` can be used remove any player from your server instantly. Note: the player must exist in the world.
+
+`ban <clientId>` can be used at anytime to ban a player. You can still use this command even if player isn't actively in the world. It will add the players clientId to a blacklist which is located at `SavePath` from your settings. 
+
+You can lift the ban by removing the ClientID from the file and using `ban refresh` which will refresh servers blacklist without requiring a reboot.
+
 
 # Known Issues
 
@@ -161,9 +173,10 @@ cd ~/.steam/debian-installation/steamapps/common/Stationeers Dedicated Server
 ./rocketstation_DedicatedServer.x86_64 \
     -logFile log.txt \
     -loadlatest "Dedicated Server Game" mars \
-    -settings ServerName "Stationeers World" StartLocalHost true ServerVisible true ServerMaxPlayers 13 SaveInterval 333 ServerPassword "abc123"
+    -settings ServerName "Stationeers World" StartLocalHost true \
+        ServerVisible true ServerMaxPlayers 13 SaveInterval 333 \
+        ServerPassword "abc123"
 ```
-
 
 # Stationeers Commands - 0.2.3401.16711
 | Command | Launch Command? | Arguments | Help |
@@ -191,8 +204,8 @@ cd ~/.steam/debian-installation/steamapps/common/Stationeers Dedicated Server
 | `reset` | False |  | Restarts the application
 | `version` | False |  | Returns the game version
 | `logtoclipboard` | False |  | Copies the content of the console buffer to the system clipboard buffer
-| `kick` | False | clientId - disconnects the client from the game | Kick clients from server commands
-| `ban` | False | clientId | Bans a client from the server (server only command)
+| `kick` | False | &lt;clientId&gt; | Kick clients from server commands
+| `ban` | False | &lt;clientId&gt;, refresh | Bans a client from the server (server only command)
 | `upnp` | False |  | returns universal plug and play (upnp) state
 | `network` | False |  | returns the current network status
 | `pause` | False | true, false | will pause/unpause the game (including for clients)
