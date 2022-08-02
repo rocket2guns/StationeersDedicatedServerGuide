@@ -187,7 +187,7 @@ All example scripts are within the [examples folder](./examples/) of this reposi
 - Help message formatting is terribly hard to read.
 
 
-# Stationeers Commands - 0.2.3401.16711
+# Stationeers Commands - 0.2.3519.17164
 | Command | Launch Command? | Arguments | Help |
 | :------ | :-------------: | :-------- | :--- |
 | `help` | False | commands, list (l), &lt;key&gt;, tofile: prints the help output to file | Displays helpful stuff
@@ -205,10 +205,10 @@ All example scripts are within the [examples folder](./examples/) of this reposi
 | `steam` | False |  | Commands to test Facepunch API. Just checks if steam is initialised and if DLC is purchased
 | `listnetworkdevices` | False | id | Lists all devices on a network. Includes: PipeNetwork, CableNetwork, ChuteNetwork
 | `testbytearray` | False |  | Tests every item in world to check its network read/write functions are parallel. Only enabled in Editor. Supply a reference Id to check ONLY that item
-| `rocketbinary` | False | toggleloglength, togglelogbps | Starts logging the size of each section of a delta update.
+| `rocketbinary` | False | togglelogbps | Starts logging the size of each section of a delta update.
 | `imgui` | False |  | Toggles ImguiInWorldTestCube on/off
 | `atmos` | False | pipe, world, room, global, thing | Enables atmosphere debugging
-| `thing` | False | No args returns total thing count, find, delete, spawn | Thing related commands
+| `thing` | False | No args returns total thing count, find, delete, spawn, info | Thing related commands
 | `keybindings` | False | reset (Resets the keybindings stack. Can help solve input issues) | Displays all the keybindings bound to LocalHuman
 | `reset` | False |  | Restarts the application
 | `version` | False |  | Returns the game version
@@ -225,8 +225,13 @@ All example scripts are within the [examples folder](./examples/) of this reposi
 | `settings` | True | list, print, &lt;PropertyName&gt; &lt;Value&gt; | Change the settings.xml. e.g settings servermaxplayers 5
 | `netconfig` | True | list, print, &lt;PropertyName&gt; &lt;Value&gt; | Change the NetConfig.xml. e.g netconfig ip 127.0.0.1
 | `settingspath` | True | &lt;full-directory-path&gt; | Sets the default settings path to a new location. Launch command only. If none found default is used.
+| `regeneraterooms` | False |  | Regenerates all rooms for the world
+| `stormbegin` | False |  | Starts weather event
+| `stormend` | False |  | Stops weather event
 | `debugthreads` | False | GameTick | Show the times that the worker threads take to run
 | `status` | False |  | Displays a bunch of info to give insight into state of server.
 | `masterserver` | False | refresh | Commands to help with interacting with the Master Server
+| `deletelooseitems` | False |  | Removes all items in world that isn't in a slot
+| `emote` | False | emoteName | Makes the player character do the requested emote
+| `serverrun` | False | Command | Sends a message to the server to perform server side commands
 | `test` | False |  | Testing all the colours of the rainbow
-
