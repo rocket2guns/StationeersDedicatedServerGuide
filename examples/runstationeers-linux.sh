@@ -32,4 +32,5 @@ SETTINGS_PATH="$DATA_DIR/settings.xml"
     GamePort $GAME_PORT UPNPEnabled $UPNP_ENABLED ServerName "$SERVER_NAME" \
     ServerPassword "$SERVER_PASSWORD" ServerMaxPlayers $SERVER_MAX_PLAYERS \
     AutoSave $AUTO_SAVE SaveInterval $SAVE_INTERVAL \
-    SavePath "$SAVE_PATH"
+    SavePath "$SAVE_PATH" \
+    ServerAuthSecrete "$SERVER_AUTH_SECRET"
