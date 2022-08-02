@@ -163,20 +163,6 @@ You can lift the ban by removing the ClientID from the file and using `ban refre
 
 - Help message formatting is terribly hard to read.
 
-# Example Script
-
-You can configure this script to run at system boot
-
-```bash
-#!/bin/bash
-cd ~/.steam/debian-installation/steamapps/common/Stationeers Dedicated Server
-./rocketstation_DedicatedServer.x86_64 \
-    -logFile log.txt \
-    -loadlatest "Dedicated Server Game" mars \
-    -settings ServerName "Stationeers World" StartLocalHost true \
-        ServerVisible true ServerMaxPlayers 13 SaveInterval 333 \
-        ServerPassword "abc123"
-```
 
 # Stationeers Commands - 0.2.3401.16711
 | Command | Launch Command? | Arguments | Help |
