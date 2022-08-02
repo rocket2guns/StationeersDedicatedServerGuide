@@ -168,7 +168,7 @@ e.g:
 
 2. That exact same setting on the client
 
-From there you can use the `serverrun` command on the client. It will send the secret every message. All messages will be rejected if the client and server secrets don't match or a server hasn't set a client.
+From there you can use the `serverrun` command on the client. It will send the secret every message. All messages will be rejected if the client and server secrets don't match or a server hasn't set a secret.
 
 Example:
 ```bash
