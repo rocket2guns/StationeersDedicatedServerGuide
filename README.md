@@ -154,12 +154,35 @@ help version
 
 You can lift the ban by removing the ClientID from the file and using `ban refresh` which will refresh servers blacklist without requiring a reboot.
 
+# Client Authroised Server Commands
+
+You can now run server command from any connected client.
+
+There are two things you must have in order to run server commands on the client. 
+1. A `ServerAuthSecret` set on server's `setting.xml` 
+
+e.g:
+```xml
+<ServerAuthSecret>stationeers</ServerAuthSecret>
+```
+
+2. That exact same setting on the client
+
+From there you can use the `serverrun` command on the client. It will send the secret every message. All messages will be rejected if the client and server secrets don't match or a server hasn't set a client.
+
+Example:
+```bash
+serverrun save "my world"
+```
+
+# Examples
+
+All example scripts are within the [examples folder](./examples/) of this repository.
+
 
 # Known Issues
 
 - On Linux the console clearing is messing with buffer of the terminal and resulting in really strange behaviour. Input can still be made i.e manually saving via `save` command, however nothing will print to console with any useful feedback.
-
-- No server admins yet. I.e selected clients being able to do server commands without needing to ssh into their server or whatever.
 
 - Help message formatting is terribly hard to read.
 
