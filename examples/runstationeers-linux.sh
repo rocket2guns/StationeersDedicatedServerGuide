@@ -33,4 +33,4 @@ SETTINGS_PATH="$DATA_DIR/settings.xml"
     ServerPassword "$SERVER_PASSWORD" ServerMaxPlayers $SERVER_MAX_PLAYERS \
     AutoSave $AUTO_SAVE SaveInterval $SAVE_INTERVAL \
     SavePath "$SAVE_PATH" \
-    ServerAuthSecrete "$SERVER_AUTH_SECRET"
+    ServerAuthSecret "$SERVER_AUTH_SECRET"
