@@ -4,7 +4,7 @@
 set DATA_DIR=%CD%/data
 
 @REM set exe
-set EXECUTABLE="D:\SteamLibrary\steamapps\common\Stationeers Dedicated Server\rocketstation_DedicatedServer.exe"
+set EXECUTABLE="C:\Program Files (x86)\Steam\steamapps\common\Stationeers Dedicated Server\rocketstation_DedicatedServer.exe"
 
 @REM # Define settings
 set SERVER_NAME="Test Dedi Server"
@@ -18,7 +18,7 @@ set SERVER_VISIBLE=true
 set UPNP_ENABLED=false
 set SERVER_MAX_PLAYERS=13
 set AUTO_SAVE=true
-set SAVE_INTERVAL=60
+set SAVE_INTERVAL=300
 set SAVE_PATH="%DATA_DIR%/saves"
 set LOG_FILE="%DATA_DIR%/log.txt"
 set SETTINGS_PATH="%DATA_DIR%/settings.xml"
