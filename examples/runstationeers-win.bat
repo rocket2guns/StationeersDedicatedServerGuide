@@ -19,7 +19,7 @@ set UPNP_ENABLED=false
 set SERVER_MAX_PLAYERS=13
 set AUTO_SAVE=true
 set SAVE_INTERVAL=300
-set SAVE_PATH="%DATA_DIR%/saves"
+set SAVE_PATH="%DATA_DIR%"
 set LOG_FILE="%DATA_DIR%/log.txt"
 set SETTINGS_PATH="%DATA_DIR%/settings.xml"
 
