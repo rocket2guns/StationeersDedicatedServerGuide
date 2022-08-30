@@ -4,7 +4,8 @@
 set DATA_DIR=%CD%/data
 
 @REM set exe
-set EXECUTABLE="C:\Program Files (x86)\Steam\steamapps\common\Stationeers Dedicated Server\rocketstation_DedicatedServer.exe"
+@REM set EXECUTABLE="D:\SteamLibrary\steamapps\common\Stationeers Dedicated Server\rocketstation_DedicatedServer.exe"
+set EXECUTABLE="C:\Users\Brogan\Documents\Unity\stationeers\Builds\Server_Win\rocketstation.exe"
 
 @REM # Define settings
 set SERVER_NAME="Test Dedi Server"
@@ -25,6 +26,7 @@ set SETTINGS_PATH="%DATA_DIR%/settings.xml"
 
 @REM Run the server
 %EXECUTABLE% ^
+-noclear ^
 -loadlatest %SAVE_NAME% %WORLD_TYPE% ^
 -settingspath %SETTINGS_PATH% ^
 -settings StartLocalHost %START_LOCAL_HOST% ServerVisible %SERVER_VISIBLE% ^
