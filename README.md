@@ -101,6 +101,7 @@ This is can be useful for setting server names, ports, passwords, visibility etc
 Properties of note are:
 - **StartLocalHost**: Starts the server on the machine allowing any client connection to take place. Default `false`
 - **ServerVisible**: Starts pining our Master server which will allow the server to show on the server list on the client. Default `true`
+- **LocalIpAddress**: The IP the server will bind to. Default `0.0.0.0`
 - **GamePort**: The port the server will be listening on. Default `27016`
 - **ServerName**: The name of the server to be displayed on the server list. Default `Stationeers`
 - **ServerPassword**: An optional password to lock the server. Default `null`
@@ -181,6 +182,8 @@ All example scripts are within the [examples folder](./examples/) of this reposi
 
 
 # Known Issues
+
+- On Linux servers, which have multiple IPs assigned, you may run into issues when connecting. The server listed in the ingame browser, however when you attempt to connect you'll experience a timeout. This generally can be resolved by adding `LocalIpAddress` with it set to the desired IP to your configuration.
 
 - On Linux the console clearing is messing with buffer of the terminal and resulting in really strange behaviour. Input can still be made i.e manually saving via `save` command, however nothing will print to console with any useful feedback.
 
