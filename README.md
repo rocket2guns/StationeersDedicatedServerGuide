@@ -190,7 +190,7 @@ All example scripts are within the [examples folder](./examples/) of this reposi
 - Help message formatting is terribly hard to read.
 
 
-# Stationeers Commands - 0.2.3582.17433
+# Stationeers Commands - 0.2.3649.17688
 | Command | Launch Command? | Arguments | Help |
 | :------ | :-------------: | :-------- | :--- |
 | `help` | False | commands, list (l), &lt;key&gt;, tofile: prints the help output to file | Displays helpful stuff
@@ -210,7 +210,7 @@ All example scripts are within the [examples folder](./examples/) of this reposi
 | `testbytearray` | False |  | Tests every item in world to check its network read/write functions are parallel. Only enabled in Editor. Supply a reference Id to check ONLY that item
 | `rocketbinary` | False | togglelogbps | Starts logging the size of each section of a delta update.
 | `imgui` | False |  | Toggles ImguiInWorldTestCube on/off
-| `atmos` | False | pipe, world, room, global, thing, cleanup | Enables atmosphere debugging
+| `atmos` | False | pipe, world, room, global, thing, cleanup, count | Enables atmosphere debugging
 | `thing` | False | No args returns total thing count, find, delete, spawn, info | Thing related commands
 | `keybindings` | False | reset (Resets the keybindings stack. Can help solve input issues) | Displays all the keybindings bound to LocalHuman
 | `reset` | False |  | Restarts the application
@@ -241,6 +241,9 @@ All example scripts are within the [examples folder](./examples/) of this reposi
 | `windowheight` | False | &lt;height&gt;, reset (r) | Sets the window height to a fixed number of lines or resets it to default behaviour.
 | `cleanupplayers` | False | dead, disconnected, all | Cleans up player bodies
 | `networkdebug` | False |  | Displays network debug window.
-| `difficulty` | False | &lt;difficulty&gt; | Sets game difficulty to one of the predefined settings
+| `difficulty` | True | &lt;difficulty&gt; | Sets game difficulty to one of the predefined settings
 | `addgas` | False | Oxygen, Nitrogen, CarbonDioxide, Volatiles, Pollutant, Water, NitrousOxide | Adds GasType to target thing of supplied ID of amount at temperature.
+| `legacycpu` | False | enable, disable | Enables Legacy Cpu mode. Recommended for users with cpus below the recommended spec
 | `test` | False |  | Testing all the colours of the rainbow
+| `autosavecancel` | False |  | Starts an auto save process then instantly stops game from running
+
