@@ -30,7 +30,7 @@ LOCAL_IP_ADDRESS="0.0.0.0"
 -loadlatest "$SAVE_NAME" $WORLD_TYPE \
 -logFile "$LOG_FILE" \
 -settingspath "$SETTINGS_PATH" \
--difficulty "$DIFFICULTY"
+-difficulty "$DIFFICULTY" \
 -settings StartLocalHost $START_LOCAL_HOST ServerVisible $SERVER_VISIBLE \
     GamePort $GAME_PORT UPNPEnabled $UPNP_ENABLED ServerName "$SERVER_NAME" \
     ServerPassword "$SERVER_PASSWORD" ServerMaxPlayers $SERVER_MAX_PLAYERS \
